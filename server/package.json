@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server Julietita",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tesis"
+  ],
+  "author": "Julieta",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.16.2",
+    "plaintextparser": "^1.0.3",
+    "body-parser": "*",
+    "cors": "*"
+
+  }
+}
