@@ -10,7 +10,7 @@ var express = require("express"),
     os = require("os");
 
 
-    let urlencodedParser = bodyParser.urlencoded({extended: false});
+    var urlencodedParser = bodyParser.urlencoded({extended: false});
     app.use(cors());
 
 
@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 
 // http://192.168.0.XX:3000/caballo
 app.get('/caballo', function (req, res) {
-  let comando = "mpg123 /Sonidos/biomedica/Normal-heart-sounds60bpm.mp3";
+  var comando = "mpg123 /Sonidos/biomedica/Normal-heart-sounds60bpm.mp3";
             cp.exec(comando, function (err, stdout, stderr) {
                 if (err) {
                     res.send(JSON.stringify({ output: stderr }));
