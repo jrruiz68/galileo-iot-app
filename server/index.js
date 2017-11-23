@@ -1,6 +1,6 @@
 
 /////////////Dependences Server///////////////
-let express = require("express"),
+var express = require("express"),
     app = express(),
     cp = require("child_process"),
     cors = require("cors"),
@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 
 // http://192.168.0.XX:3000/caballo
 app.get('/caballo', function (req, res) {
-  let comando = "mpg3 chachacha.pm3";
+  let comando = "mpg123 /Sonidos/biomedica/Normal-heart-sounds60bpm.mp3";
             cp.exec(comando, function (err, stdout, stderr) {
                 if (err) {
                     res.send(JSON.stringify({ output: stderr }));
