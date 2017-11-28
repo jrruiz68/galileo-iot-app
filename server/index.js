@@ -22,8 +22,9 @@ app.get('/', function (req, res) {
 
 
 
-// http://192.168.0.XX:3000/caballo
-app.get('/caballo', function (req, res) {
+// http://192.168.0.XX:3000/cabeza
+app.post('/cabeza', function (req, res) {
+ console.log('>>>> Cabeza <<<<');
   var comando = "mpg123 Sonidos/biomedica/Normal-heart-sounds60bpm.mp3";
             cp.exec(comando, function (err, stdout, stderr) {
                 if (err) {
@@ -35,6 +36,21 @@ app.get('/caballo', function (req, res) {
             });
 });
 
-app.listen(3000, function () {
-  console.log('Espero te ayude Julietita, ver el puerto 3000');
+
+// http://192.168.0.XX:3000/cabeza
+app.post('/corazon', function (req, res) {
+ console.log('>>>> Corazon <<<<');
+  var comando = "mpg123 Sonidos/biomedica/Normal-heart-sounds60bpm.mp3";
+            cp.exec(comando, function (err, stdout, stderr) {
+                if (err) {
+                    res.send(JSON.stringify({ output: stderr }));
+                } else {
+                  console.log(stdout);
+                  res.send(JSON.stringify({ output: stderr}));
+                }
+            });
+});
+
+app.listen(8080, function () {
+  console.log('Server is running on >>> 8080 <<<');
 });
