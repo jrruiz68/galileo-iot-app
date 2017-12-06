@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 text-center *ngIf="selectedItem">
+    {{selectedItem.title}}
+    <ion-icon [name]="selectedItem.icon"></ion-icon>
+  </h3>
+  <ion-card>
+    <ion-img background="#66a3ff" class="colorback" align="center" min-width="280" height="280" src="../assets/imgs/cardiopulmonar.gif"></ion-img>
+  </ion-card>
+  <h4 text-center *ngIf="selectedItem">
+    Estás escuchando <b>{{selectedItem.title}}</b>
+  </h4>
+  <div align="center">
+    <button ion-button icon-only (click)="detener()"><ion-icon name="md-square"></ion-icon></button>
+    <button ion-button icon-only (click)="reproducir()"><ion-icon name="md-play"></ion-icon></button>
+    <button ion-button icon-only (click)="pausar()"><ion-icon name="md-pause"></ion-icon></button>
+    <button ion-button icon-only (click)="repetir()"><ion-icon name="md-repeat"></ion-icon></button>
+  </div>
+</ion-content>
